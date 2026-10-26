@@ -32,7 +32,7 @@ Every layer closes with a gate summary. Confirm it (or change it) before the nex
 
 ## Optional companion
 
-Layer 1 is sharper with a **grilling** skill. Install one if you want it; the skill still runs without it:
+This skill works best with Matt Pocock's **grilling** skill. Install it if you can; the skill still runs without it:
 
 ```bash
 npx skills add mattpocock/skills --skill grilling

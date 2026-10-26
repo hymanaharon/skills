@@ -15,6 +15,8 @@ Design a feature the way a product designer does: the UI comes **last**. Work fi
 
 Each layer ends at a **gate**: post a summary of what you settled, then wait for the user to confirm it before you open the next layer. A question that belongs to a lower layer gets parked as an open question for that layer. When a lower layer exposes a flaw in a settled one, say so, reopen that layer, and re-gate it.
 
+This skill works best with Matt Pocock's `grilling` skill ([mattpocock/skills](https://github.com/mattpocock/skills) — `npx skills add mattpocock/skills --skill grilling`). Use it on Layer 1 when it is available.
+
 ## Gate summary
 
 Close every layer with this block, carrying forward everything settled so far so the latest gate is always the whole brief:
