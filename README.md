@@ -1,6 +1,6 @@
 # product-designer
 
-[![skills.sh](https://skills.sh/b/judojourneyapp/product-designer)](https://skills.sh/judojourneyapp/product-designer)
+[![skills.sh](https://skills.sh/b/hymanaharon/product-designer)](https://skills.sh/hymanaharon/product-designer)
 
 An [Agent Skill](https://agentskills.io) that walks a feature design top-down: problem → logic → process → UX → UI. The UI comes last. Each layer ends at a gate you confirm before the next one opens.
 
@@ -9,7 +9,7 @@ Works on any project and any skills-compatible agent. It reads that repo's docs,
 ## Install
 
 ```bash
-npx skills add judojourneyapp/product-designer
+npx skills add hymanaharon/product-designer
 ```
 
 Or point your agent at this repo / the `SKILL.md` folder the way your client prefers.
