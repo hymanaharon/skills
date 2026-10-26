@@ -1,6 +1,6 @@
 ---
-name: product-designer-agnostic
-description: Design a feature top-down for any project (problem, logic, process, UX, then UI), stopping after each layer to settle it with the user. Use when the user names product-designer-agnostic, or asks for the project-agnostic five-layer product design flow.
+name: product-designer
+description: Design a feature top-down for any project (problem, logic, process, UX, then UI), stopping after each layer to settle it with the user. Use when the user asks for product design, a five-layer design flow, or names product-designer.
 disable-model-invocation: true
 license: MIT
 ---
@@ -11,7 +11,7 @@ Design a feature the way a product designer does: the UI comes **last**. Work fi
 2. **Logic**: rules, states, edge cases.
 3. **Process**: who owns what, what happens when.
 4. **UX**: flows and structure.
-5. **UI**: screens, drawn in the design surface this session can reach.
+5. **UI**: screens, on whatever design surface this session can actually reach.
 
 Each layer ends at a **gate**: post a summary of what you settled, then wait for the user to confirm it before you open the next layer. A question that belongs to a lower layer gets parked as an open question for that layer. When a lower layer exposes a flaw in a settled one, say so, reopen that layer, and re-gate it.
 
@@ -45,7 +45,7 @@ Ground yourself in the project before the first question. Find its sources of tr
 
 Look at what the product does today in this area: routes, entities, and the persona each surface serves.
 
-Then invoke the `grilling` skill, scoped to the problem only: who hits it (persona, role, scope), what they do today instead, what breaks and how often, what evidence exists, and what "solved" looks like. A proposed solution is a symptom; trace it back to the need it serves.
+Then stress-test the problem only: who hits it (persona, role, scope), what they do today instead, what breaks and how often, what evidence exists, and what "solved" looks like. A proposed solution is a symptom; trace it back to the need it serves. If a `grilling` or `grill-me` skill is available in this session, invoke it for that pass. If not, ask the same hard questions yourself — do not stall waiting for a grill skill.
 
 Done when you can state the problem in one sentence, name the persona it hurts, and give the success measure, and the user agrees with all three. A conflict with a recorded product decision goes to the user as a new decision, never resolved silently.
 
@@ -69,6 +69,14 @@ Done when every flow runs from entry to an exit, and you have a list of the scre
 
 ## Layer 5: UI
 
-Draw the screens from the Layer 4 list. Use the design surface this session can reach. In Claude, call the Artifact tool with `action: "quickstart"` and `intent: "design"`, then follow the instructions it returns. Build on the project's look: its design-system tokens and components (read that package's README, or the style source the repo treats as canonical), and every locale and writing direction the product already ships. Draw each screen in its main state, then the states Layer 4 named.
+Draw the screens from the Layer 4 list. Build on the project's look: its design-system tokens and components (read that package's README, or the style source the repo treats as canonical), and every locale and writing direction the product already ships. Draw each screen in its main state, then the states Layer 4 named.
 
-Done when every screen on the list is drawn in every listed state, and the user has reviewed the design. Close with the final gate summary and offer the project's spec step (such as `/to-spec`) to turn the brief into a ticket.
+Pick the **highest-fidelity design surface this session actually has**. Do not invent a tool, and do not require a Claude-only or vendor-specific design product. Prefer in this order:
+
+1. A connected design tool the session can drive (for example Figma, or another design MCP / plugin already available).
+2. A visual artifact the host supports (HTML/CSS prototype file, generated image, canvas, or similar).
+3. Annotated wireframes in chat: layout, hierarchy, copy, and which design-system components each region uses — enough for a designer or implementer to build from.
+
+Say which surface you used in the gate summary. If the user asks for a specific tool, use that when available; otherwise stay on the best available option above.
+
+Done when every screen on the list is drawn (or wireframed) in every listed state, and the user has reviewed the design. Close with the final gate summary and offer the project's next spec step (for example a `/to-spec` skill, a ticket draft, or a written brief) if one exists.
