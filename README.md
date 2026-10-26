@@ -4,7 +4,7 @@
 
 An [Agent Skill](https://agentskills.io) that walks a feature design top-down: problem → logic → process → UX → UI. The UI comes last. Each layer ends at a gate you confirm before the next one opens.
 
-Works on any project and any skills-compatible agent. It reads that repo's docs, glossary, and design system, and draws UI on whatever design surface the session can actually reach (Figma, HTML prototype, images, or annotated wireframes) — not a single vendor's design tool.
+Works on any project and any skills-compatible agent. It reads that repo's docs, glossary, and design system. For UI it prefers Claude Design when available, and offers agnostic fallbacks (Figma, HTML prototype, images, or annotated wireframes) when it is not.
 
 ## Install
 
@@ -26,7 +26,7 @@ Or point your agent at this repo / the `SKILL.md` folder the way your client pre
 2. **Logic** — entities, states, transitions, edge cases
 3. **Process** — owners, approvals, automation, permissions
 4. **UX** — flows, routes, empty/loading/error states
-5. **UI** — screens on the best design surface available in the session
+5. **UI** — screens in Claude Design when available; otherwise Figma, a visual artifact, or annotated wireframes
 
 Every layer closes with a gate summary. Confirm it (or change it) before the next layer starts. If a lower layer breaks an earlier decision, that layer reopens.
 

@@ -71,12 +71,14 @@ Done when every flow runs from entry to an exit, and you have a list of the scre
 
 Draw the screens from the Layer 4 list. Build on the project's look: its design-system tokens and components (read that package's README, or the style source the repo treats as canonical), and every locale and writing direction the product already ships. Draw each screen in its main state, then the states Layer 4 named.
 
-Pick the **highest-fidelity design surface this session actually has**. Do not invent a tool, and do not require a Claude-only or vendor-specific design product. Prefer in this order:
+**Prefer Claude Design** when this session can use it (for example Claude's Artifact tool with `action: "quickstart"` and `intent: "design"`, then follow the instructions it returns). Say so in the gate summary.
+
+If Claude Design is unavailable, or the user wants something else, offer **agent-agnostic** alternatives and use the best one they pick (or the best one available if they don't care):
 
 1. A connected design tool the session can drive (for example Figma, or another design MCP / plugin already available).
 2. A visual artifact the host supports (HTML/CSS prototype file, generated image, canvas, or similar).
 3. Annotated wireframes in chat: layout, hierarchy, copy, and which design-system components each region uses — enough for a designer or implementer to build from.
 
-Say which surface you used in the gate summary. If the user asks for a specific tool, use that when available; otherwise stay on the best available option above.
+Do not invent a tool that isn't there. If the user names a specific surface, use that when available. Always say which surface you used in the gate summary.
 
 Done when every screen on the list is drawn (or wireframed) in every listed state, and the user has reviewed the design. Close with the final gate summary and offer the project's next spec step (for example a `/to-spec` skill, a ticket draft, or a written brief) if one exists.
